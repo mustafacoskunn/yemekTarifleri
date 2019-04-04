@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="365dp"
+        android:layout_height="82dp"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="5dp">
+
+        <RelativeLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/yemekAdText"
+                android:layout_width="224dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="0dp"
+                android:text="Patlıcan Kebabı dsadsadasdasdsadasdasdasdasdasdasdas"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/resim"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+
+
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                app:srcCompat="@drawable/hunkarmuhallebisi" />
+
+            <TextView
+                android:id="@+id/hazirlamasuresiText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/yemekAdText"
+
+
+                android:layout_alignStart="@+id/yemekAdText"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="-2dp"
+                android:text="Pişirme Süresi:50 dk" />
+
+            <TextView
+                android:id="@+id/kisiSayisiText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hazirlamasuresiText"
+                android:layout_alignStart="@+id/yemekAdText"
+
+
+                android:text="Kaç Kişilik:5" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

@@ -27,8 +27,8 @@
                 android:layout_height="53dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="224dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="230dp"
                 android:text="Patlıcan Kebabı dsadsadasdasdsadasdasdasdasdasdasdas"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -42,7 +42,7 @@
 
                 android:layout_alignParentTop="true"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/hunkarmuhallebisi" />
+               />
 
             <TextView
                 android:id="@+id/hazirlamasuresiText"
@@ -52,8 +52,8 @@
 
                 android:layout_alignStart="@+id/yemekAdText"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginBottom="0dp"
+                android:layout_marginStart="-1dp"
+                android:layout_marginBottom="17dp"
                 android:text="Pişirme Süresi:50 dk" />
 
             <TextView

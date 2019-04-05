@@ -61,7 +61,7 @@ public class tariflerAdapter extends RecyclerView.Adapter<tariflerAdapter.cardVi
             public void onClick(View v) {
                YoYo.with(Techniques.FadeOutLeft).playOn(holder.cardView);
 
-                new CountDownTimer(1000, 900) {
+                new CountDownTimer(750, 750) {
 
                     public void onTick(long millisUntilFinished) {
 

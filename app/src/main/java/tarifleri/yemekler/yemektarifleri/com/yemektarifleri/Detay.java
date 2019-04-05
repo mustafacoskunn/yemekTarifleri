@@ -3,6 +3,7 @@ package tarifleri.yemekler.yemektarifleri.com.yemektarifleri;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -19,7 +20,7 @@ public class Detay extends AppCompatActivity {
 
     private tarifler tarif;
     private tarifler gelen;
-    TextView malzemeGetir,yemekDetay;
+    TextView malzemeGetir,yemekDetay,yemekadi,malzemeler,tariftext;
     ImageView resim;
 
     @Override
@@ -27,9 +28,19 @@ public class Detay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detay);
         malzemeGetir=findViewById(R.id.malzemeGetir);
-
+        Typeface kalin=Typeface.createFromAsset(getAssets(),"fonts/deneme1.otf");
+        Typeface ince=Typeface.createFromAsset(getAssets(),"fonts/deneme2.otf");
         resim=findViewById(R.id.resim);
         yemekDetay=findViewById(R.id.yemekDetay);
+        yemekadi=findViewById(R.id.yemekadi);
+        malzemeler=findViewById(R.id.malzemeler);
+        tariftext=findViewById(R.id.tariftext);
+        yemekDetay.setTypeface(ince);
+        yemekadi.setTypeface(kalin);
+        malzemeGetir.setTypeface(ince);
+        malzemeler.setTypeface(kalin);
+        tariftext.setTypeface(kalin);
+
         tarif=(tarifler) getIntent().getSerializableExtra("tarifbilgi");
 
         int a= (int) getIntent().getSerializableExtra("asd");
@@ -51,6 +62,7 @@ public class Detay extends AppCompatActivity {
                         c.getString(c.getColumnIndex("yemektarifi")));
                 malzemeGetir.setText(c.getString(c.getColumnIndex("malzeme")));
                 yemekDetay.setText(c.getString(c.getColumnIndex("yemektarifi")));
+                yemekadi.setText(c.getString(c.getColumnIndex("yemekad")));
                 Picasso.with(Detay.this)
                         .load("http://indirkaydet.com/yemekresimleri/"+c.getString(c.getColumnIndex("resim"))+".jpg")
                         .into(resim);

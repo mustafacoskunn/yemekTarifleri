@@ -2,6 +2,7 @@ package tarifleri.yemekler.yemektarifleri.com.yemektarifleri;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -39,13 +41,21 @@ public class tariflerAdapter extends RecyclerView.Adapter<tariflerAdapter.cardVi
     @Override
     public void onBindViewHolder(final cardViewTutucum holder, final int position) {
       final tarifler tarifler=tariflerList.get(position);
+        Typeface face=Typeface.createFromAsset(mContext.getAssets(),"fonts/deneme1.otf");
+        Typeface face1=Typeface.createFromAsset(mContext.getAssets(),"fonts/deneme2.otf");
+        holder.yemekAdText.setTypeface(face);
+        holder.kisiSayisiText.setTypeface(face1);
+        holder.hazirlamasuresiText.setTypeface(face1);
         YoYo.with(Techniques.FadeInDown).playOn(holder.cardView); //aşagı dogru animasyon
       holder.yemekAdText.setText(tarifler.getYemekad());
-      holder.hazirlamasuresiText.setText("Pişirme süresi:"+tarifler.getHazirlamasuresi()+" dk");
-      holder.kisiSayisiText.setText(String.valueOf(tarifler.getKisisayisi()+" kişilik"));
-        holder.resim.setImageResource(mContext.getResources().getIdentifier(tariflerList.get(position).getResim()
-                ,"drawable", mContext.getPackageName())); //bu kod resimin ismine göre drawablenden çekmeye yarıyor sıra sıra card view ekliyor
+      holder.hazirlamasuresiText.setText("Pisirme süresi:"+tarifler.getHazirlamasuresi()+" dk");
+      holder.kisiSayisiText.setText(String.valueOf(tarifler.getKisisayisi()+" kisilik"));
+        //holder.resim.setImageResource(mContext.getResources().getIdentifier(tariflerList.get(position).getResim()
+          //      ,"drawable", mContext.getPackageName())); //bu kod resimin ismine göre drawablenden çekmeye yarıyor sıra sıra card view ekliyor
 
+        Picasso.with(mContext)
+                .load("http://indirkaydet.com/yemekresimleri/"+tariflerList.get(position).getResim()+".jpg")
+                .into(holder.resim);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

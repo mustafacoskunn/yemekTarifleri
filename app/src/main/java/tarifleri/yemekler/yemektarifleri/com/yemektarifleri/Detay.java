@@ -9,6 +9,8 @@ import android.view.KeyEvent;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.io.IOException;
 
 import maes.tech.intentanim.CustomIntent;
@@ -49,7 +51,9 @@ public class Detay extends AppCompatActivity {
                         c.getString(c.getColumnIndex("yemektarifi")));
                 malzemeGetir.setText(c.getString(c.getColumnIndex("malzeme")));
                 yemekDetay.setText(c.getString(c.getColumnIndex("yemektarifi")));
-                resim.setImageResource(a);
+                Picasso.with(Detay.this)
+                        .load("http://indirkaydet.com/yemekresimleri/"+c.getString(c.getColumnIndex("resim"))+".jpg")
+                        .into(resim);
 
             }
 

@@ -46,9 +46,11 @@ public class tariflerAdapter extends RecyclerView.Adapter<tariflerAdapter.cardVi
         holder.yemekAdText.setTypeface(face);
         holder.kisiSayisiText.setTypeface(face1);
         holder.hazirlamasuresiText.setTypeface(face1);
+        holder.textView.setTypeface(face1);
         YoYo.with(Techniques.FadeInDown).playOn(holder.cardView); //aşagı dogru animasyon
       holder.yemekAdText.setText(tarifler.getYemekad());
       holder.hazirlamasuresiText.setText("Hazırlama süresi:"+tarifler.getHazirlamasuresi()+" dk");
+      holder.hazirlamasuretext.setTypeface(face1);
       String sure=String.valueOf(tarifler.getSure());
       if(tarifler.getSure()==0){
           sure="-";
@@ -100,7 +102,7 @@ public class tariflerAdapter extends RecyclerView.Adapter<tariflerAdapter.cardVi
     public class cardViewTutucum extends RecyclerView.ViewHolder { // biz bu sınıfı yukardaki sınıfa bağlamamız gerekli
 
         public CardView cardView;
-        public TextView kisiSayisiText,hazirlamasuresiText,yemekAdText,hazirlamasuretext;
+        public TextView kisiSayisiText,hazirlamasuresiText,yemekAdText,hazirlamasuretext,textView;
 
         private ImageView resim;
 
@@ -116,6 +118,7 @@ public class tariflerAdapter extends RecyclerView.Adapter<tariflerAdapter.cardVi
             yemekAdText=itemView.findViewById(R.id.yemekAdText);
             resim=itemView.findViewById(R.id.resim);
             hazirlamasuretext=itemView.findViewById(R.id.hazirlamasuretext);
+            textView=itemView.findViewById(R.id.textView);
 
         }
     }

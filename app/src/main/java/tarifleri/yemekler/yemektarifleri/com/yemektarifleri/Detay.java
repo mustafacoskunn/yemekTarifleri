@@ -59,7 +59,8 @@ public class Detay extends AppCompatActivity {
                         c.getInt(c.getColumnIndex("kisisayisi")),
                         c.getString(c.getColumnIndex("resim")),
                         c.getString(c.getColumnIndex("malzeme")),
-                        c.getString(c.getColumnIndex("yemektarifi")));
+                        c.getString(c.getColumnIndex("yemektarifi")),
+                        c.getInt(c.getColumnIndex("sure")));
                 malzemeGetir.setText(c.getString(c.getColumnIndex("malzeme")));
                 yemekDetay.setText(c.getString(c.getColumnIndex("yemektarifi")));
                 yemekadi.setText(c.getString(c.getColumnIndex("yemekad")));

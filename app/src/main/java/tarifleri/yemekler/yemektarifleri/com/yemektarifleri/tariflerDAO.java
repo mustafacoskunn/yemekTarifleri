@@ -18,7 +18,8 @@ public class tariflerDAO {
                             c.getInt(c.getColumnIndex("kisisayisi")),
                             c.getString(c.getColumnIndex("resim")),
                             c.getString(c.getColumnIndex("malzeme")),
-                             c.getString(c.getColumnIndex("yemektarifi")));
+                             c.getString(c.getColumnIndex("yemektarifi")),
+                            c.getInt(c.getColumnIndex("sure")));
             tariflerArrayList.add(t);
         }
         return tariflerArrayList;
@@ -28,7 +29,7 @@ public class tariflerDAO {
         ArrayList<tarifler> tariflerArrayList=new ArrayList<>(); //her seferinde boşalt
 
         SQLiteDatabase db=vt.getWritableDatabase();
-        Cursor c=db.rawQuery("select * from Yemektarifleri where yemekad like '%"+arananTarif+"%'",null);
+        Cursor c=db.rawQuery("select * from Yemektarifleri where yemekad like '%"+arananTarif+"%' ORDER BY RANDOM() LIMIT 3540",null);
         while (c.moveToNext()){
             tarifler t=new tarifler(c.getInt(c.getColumnIndex("id")),
                     c.getString(c.getColumnIndex("yemekad")),
@@ -36,10 +37,13 @@ public class tariflerDAO {
                     c.getInt(c.getColumnIndex("kisisayisi")),
                     c.getString(c.getColumnIndex("resim")),
                     c.getString(c.getColumnIndex("malzeme")),
-                    c.getString(c.getColumnIndex("yemektarifi")));
+                    c.getString(c.getColumnIndex("yemektarifi")),
+                    c.getInt(c.getColumnIndex("sure")));
             tariflerArrayList.add(t);
         }
         return tariflerArrayList;
+
+
 
     }
 }

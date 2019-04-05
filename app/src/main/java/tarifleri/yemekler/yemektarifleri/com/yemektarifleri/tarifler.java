@@ -10,6 +10,16 @@ public class tarifler implements Serializable {
     private String resim;
     private String malzeme;
     private String yemekTarifi;
+    private int sure;
+    public int getSure() {
+        return sure;
+    }
+
+    public void setSure(int sure) {
+        this.sure = sure;
+    }
+
+
 
     public String getMalzeme() {
         return malzeme;
@@ -30,12 +40,13 @@ public class tarifler implements Serializable {
     public tarifler() {
     }
 
-    public tarifler(int id, String yemekad, String hazirlamasuresi, int kisisayisi,String resim,String malzemeler,String yemekTarifi) {
+    public tarifler(int id, String yemekad, String hazirlamasuresi, int kisisayisi,String resim,String malzemeler,String yemekTarifi,int sure) {
         this.id = id;
         this.yemekad = yemekad;
         this.hazirlamasuresi = hazirlamasuresi;
         this.kisisayisi = kisisayisi;
         this.resim=resim;
+        this.sure=sure;
     }
 
     public String getResim() {

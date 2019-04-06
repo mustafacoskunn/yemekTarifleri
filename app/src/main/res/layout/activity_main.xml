@@ -26,4 +26,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolBar" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+android:layout_marginStart="60dp"
+        android:layout_marginBottom="50dp"
+
+        android:background="@drawable/anaekranfavori"
+        app:layout_constraintBottom_toTopOf="@+id/rv"
+        app:layout_constraintEnd_toStartOf="@+id/toolBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar" />
 </android.support.constraint.ConstraintLayout>
+
+

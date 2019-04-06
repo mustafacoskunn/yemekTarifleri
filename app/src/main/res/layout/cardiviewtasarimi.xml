@@ -11,15 +11,16 @@
         android:layout_width="382dp"
         android:layout_height="300dp"
         android:layout_margin="15dp"
+        app:cardBackgroundColor="#f1f1f1"
         app:cardCornerRadius="30dp"
         app:cardElevation="5dp">
 
         <RelativeLayout
 
             android:layout_width="wrap_content"
-            android:background="#f1f1f1"
+            android:layout_height="wrap_content"
 
-            android:layout_height="wrap_content">
+            android:background="#f1f1f1">
 
             <TextView
                 android:id="@+id/yemekAdText"
@@ -41,8 +42,7 @@
 
 
                 android:layout_alignParentTop="true"
-                android:scaleType="centerCrop"
-               />
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/hazirlamasuresiText"
@@ -78,11 +78,10 @@
                 android:layout_alignStart="@+id/yemekAdText"
 
 
-
-                android:textSize="14dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="-17dp"
-                android:text="8 Kisilik" />
+                android:text="8 Kisilik"
+                android:textSize="14dp" />
 
             <ImageView
                 android:id="@+id/imageView"
@@ -127,8 +126,8 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginBottom="0dp"
                 android:layout_toEndOf="@+id/textView"
-                android:textSize="14dp"
-                android:text=":25 dk" />
+                android:text=":25 dk"
+                android:textSize="14dp" />
 
 
         </RelativeLayout>

@@ -1,12 +1,20 @@
 package tarifleri.yemekler.yemektarifleri.com.yemektarifleri;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+
+
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,7 +29,15 @@ public class Detay extends AppCompatActivity {
     private tarifler tarif;
     private tarifler gelen;
     TextView malzemeGetir,yemekDetay,yemekadi,malzemeler,tariftext;
-    ImageView resim;
+    ImageView resim,favoriekle;
+    SQLiteDatabase db;
+    DatabaseCopyHelper databaseCopyHelper;
+    Toolbar toolbar3;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+    int tarifidsi;
+    int tiklama;
+    int tikiliMi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,19 +56,27 @@ public class Detay extends AppCompatActivity {
         malzemeGetir.setTypeface(ince);
         malzemeler.setTypeface(kalin);
         tariftext.setTypeface(kalin);
-
+        favoriekle=findViewById(R.id.favoriekle);
+        favoriekle.setBackgroundResource(R.drawable.ic_favorite_border_black_24dp);
+        favoriekle.setTag((R.drawable.ic_favorite_border_black_24dp));
+        toolbar3=findViewById(R.id.toolBar3);
+        toolbar3.setTitle("");
+        setSupportActionBar(toolbar3);
         tarif=(tarifler) getIntent().getSerializableExtra("tarifbilgi");
 
         int a= (int) getIntent().getSerializableExtra("asd");
 
 
-        DatabaseCopyHelper databaseCopyHelper=new DatabaseCopyHelper(this);
+        System.out.println("geldi1");
+
+         databaseCopyHelper=new DatabaseCopyHelper(this);
         try {
             databaseCopyHelper.createDataBase();
-
-            SQLiteDatabase db=databaseCopyHelper.getWritableDatabase();
+            System.out.println("geldi2");
+            db=databaseCopyHelper.getWritableDatabase();
             Cursor c=db.rawQuery("select * from Yemektarifleri where id="+tarif.getId()+" order by id desc",null);
             while (c.moveToNext()){
+
                 gelen=new tarifler(c.getInt(c.getColumnIndex("id")),
                         c.getString(c.getColumnIndex("yemekad")),
                         c.getString(c.getColumnIndex("hazirlamasuresi")),
@@ -67,17 +91,87 @@ public class Detay extends AppCompatActivity {
                 Picasso.with(Detay.this)
                         .load("http://indirkaydet.com/yemekresimleri/"+c.getString(c.getColumnIndex("resim"))+".jpg")
                         .into(resim);
+                tarifidsi=c.getInt(c.getColumnIndex("id"));
 
             }
 
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("hatalı"+e);
+
         }
 
 
 
+        databaseCopyHelper=new DatabaseCopyHelper(getApplicationContext());
+        try {
+            databaseCopyHelper.createDataBase();
+            System.out.println("geldi2");
+            db=databaseCopyHelper.getWritableDatabase();
+            Cursor c=db.rawQuery("select * from favoriler where favoriid="+tarif.getId(),null);
+            while (c.moveToNext()) {
+                favoriekle.setBackgroundResource(R.drawable.ic_favorite_black_24dp);
+                favoriekle.setTag((R.drawable.ic_favorite_black_24dp));
+
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("hatalı"+e);
+
+        }
 
 
+        System.out.println("taglar"+favoriekle.getTag());
+
+        favoriekle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+                if((Integer)favoriekle.getTag()==2131165286){
+                    favoriekle.setBackgroundResource(R.drawable.ic_favorite_border_black_24dp);
+                    favoriekle.setTag((R.drawable.ic_favorite_border_black_24dp));
+                    System.out.println("açıksimge;"+favoriekle.getTag());
+                    db.execSQL("delete from favoriler where favoriid="+tarif.getId());
+                   Snackbar.make(v,"Favorilerden kaldırıldı",Snackbar.LENGTH_LONG).setAction("Favorilere Git", new View.OnClickListener() {
+                       @Override
+                       public void onClick(View v) {
+                           Intent intent=new Intent(getBaseContext(),favoriler.class);
+                           startActivity(intent);
+                       }
+                   }).show();
+                }
+                else{
+                    favoriekle.setBackgroundResource(R.drawable.ic_favorite_black_24dp);
+                    favoriekle.setTag((R.drawable.ic_favorite_black_24dp));
+                    System.out.println("kapalisimge;"+favoriekle.getTag());
+                    ContentValues cv = new ContentValues();
+                    cv.put("favoriid", tarifidsi);
+
+                    db.insert("favoriler",null,cv);
+                    Snackbar.make(v,"Favorilere eklendi",Snackbar.LENGTH_LONG).setAction("Favorilere Git", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent=new Intent(getBaseContext(),favoriler.class);
+                            startActivity(intent);
+                        }
+                    }).show();
+
+
+                }
+
+
+
+
+            }
+        });
+
+
+
+
+        System.out.println("sdsdsd;"+favoriekle.getTag());
 
     }
 

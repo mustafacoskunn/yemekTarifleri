@@ -2,15 +2,15 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     tools:context=".Detay"
     tools:layout_editor_absoluteY="81dp">
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="407dp"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,8 +21,8 @@
 
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"
             android:background="#f1f1f1"
 
@@ -32,7 +32,7 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolBar3"
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
+                android:layout_height="match_parent"
                 android:background="@color/colorAccent"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme" />
@@ -47,44 +47,47 @@
 
 
             <android.support.v7.widget.CardView
-                android:layout_width="390dp"
-                android:layout_height="250dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="40dp"
 
+                android:layout_margin="15dp"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp"
                 app:cardPreventCornerOverlap="false">
 
                 <ImageView
                     android:id="@+id/resim"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
 
                     android:scaleType="centerCrop" />
 
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="390dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="13dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 app:cardBackgroundColor="#ffffff"
+                android:layout_margin="15dp"
                 app:cardCornerRadius="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
                 app:cardElevation="4dp"
                 app:cardPreventCornerOverlap="false">
 
                 <TextView
                     android:id="@+id/yemekadi"
-                    android:layout_width="wrap_content"
+                    android:layout_width="290dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:text="Yemekadi"
 
-                    android:textSize="20sp"
+                    android:layout_margin="10dp"
+
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Malzemeler"
+                    android:textSize="19sp"
+
                     android:textStyle="bold"
 
 
@@ -94,24 +97,28 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="390dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="13dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 app:cardBackgroundColor="#ffffff"
                 app:cardCornerRadius="5dp"
+                android:layout_margin="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
                 app:cardElevation="4dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 app:cardPreventCornerOverlap="false">
+
 
                 <TextView
                     android:id="@+id/malzemeler"
-                    android:layout_width="wrap_content"
+                    android:layout_width="290dp"
                     android:layout_height="wrap_content"
 
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="15dp"
                     android:text="Malzemeler"
-                    android:textSize="14sp"
+                    android:textSize="19sp"
 
                     android:textStyle="bold" />
 
@@ -126,50 +133,52 @@
                     android:layout_marginTop="40dp"
                     android:text="7 Dakika"
 
-                    android:textSize="12sp" />
+                    android:textSize="17sp" />
 
 
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="390dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="13dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 app:cardBackgroundColor="#ffffff"
+                android:layout_margin="15dp"
                 app:cardCornerRadius="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
                 app:cardElevation="4dp"
                 app:cardPreventCornerOverlap="false">
 
+
                 <TextView
                     android:id="@+id/tariftext"
-                    android:layout_width="wrap_content"
+                    android:layout_width="290dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="15dp"
                     android:text="Tarif"
-                    android:textSize="14sp"
+                    android:textSize="19sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/yemekDetay"
 
 
-                    android:layout_width="wrap_content"
+                    android:layout_width="280dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
 
                     android:layout_marginTop="40dp"
                     android:text="7 Dakika"
 
-                    android:textSize="12sp" />
+                    android:textSize="17sp" />
 
 
             </android.support.v7.widget.CardView>
 
             <TextView
                 android:id="@+id/sdasd"
-                android:layout_width="wrap_content"
+                android:layout_width="400dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"

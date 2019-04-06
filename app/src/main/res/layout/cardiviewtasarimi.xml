@@ -8,7 +8,7 @@
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardview"
-        android:layout_width="382dp"
+        android:layout_width="wrap_content"
         android:layout_height="300dp"
         android:layout_margin="15dp"
         app:cardBackgroundColor="#f1f1f1"
@@ -18,19 +18,18 @@
         <RelativeLayout
 
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="295dp"
 
             android:background="#f1f1f1">
 
             <TextView
                 android:id="@+id/yemekAdText"
-                android:layout_width="347dp"
-                android:layout_height="53dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="11dp"
                 android:layout_marginTop="230dp"
-                android:text="Patlıcan Kebabı dsadsadasdasdsadasdasdasdasdasdasdas"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -48,25 +47,27 @@
                 android:id="@+id/hazirlamasuresiText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/yemekAdText"
 
+
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="214dp"
-                android:layout_marginBottom="6dp"
-                android:text="Hazırlama Süresi:50 dk"
-                android:textSize="14dp" />
+                android:layout_marginStart="197dp"
+                android:layout_marginTop="270dp"
+                android:layout_marginBottom="8dp"
+                android:text="Hazırlama:50 dk"
+                android:textSize="12sp" />
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="21dp"
+                android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:layout_alignStart="@+id/hazirlamasuresiText"
-                android:layout_alignTop="@+id/yemekAdText"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
-
-                android:layout_marginStart="-18dp"
-                android:layout_marginTop="52dp"
-                android:layout_marginBottom="0dp"
+                android:layout_marginStart="182dp"
+                android:layout_marginTop="270dp"
+                android:layout_marginBottom="7dp"
                 android:padding="1dp"
                 app:srcCompat="@drawable/hazirlama_icon" />
 
@@ -74,60 +75,71 @@
                 android:id="@+id/kisiSayisiText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/hazirlamasuresiText"
-                android:layout_alignStart="@+id/yemekAdText"
-
-
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="-17dp"
-                android:text="8 Kisilik"
-                android:textSize="14dp" />
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="38dp"
+                android:layout_marginTop="270dp"
+                android:layout_marginEnd="224dp"
+                android:layout_marginBottom="8dp"
+                android:text="8 kisi"
+                android:textSize="12sp" />
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/yemekAdText"
-                android:layout_alignTop="@+id/kisiSayisiText"
-                android:layout_alignBottom="@+id/kisiSayisiText"
-                android:layout_marginStart="9dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="1dp"
+                android:layout_width="18dp"
+
+                android:layout_height="18dp"
+
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="270dp"
+                android:layout_marginBottom="8dp"
                 app:srcCompat="@drawable/kisi_icon" />
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/kisiSayisiText"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="115dp"
-                android:layout_marginBottom="0dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="91dp"
+                android:layout_marginTop="270dp"
+                android:layout_marginBottom="8dp"
                 android:text="Pisirme"
-                android:textSize="14dp" />
+                android:textSize="13sp" />
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/textView"
-                android:layout_alignBottom="@+id/textView"
-                android:layout_marginStart="9dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
 
-                android:layout_marginBottom="2dp"
-                android:layout_toEndOf="@+id/kisiSayisiText"
+
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="71dp"
+                android:layout_marginTop="269dp"
+                android:layout_marginBottom="9dp"
                 app:srcCompat="@drawable/pisirme_icon" />
 
             <TextView
                 android:id="@+id/hazirlamasuretext"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/resim"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginBottom="0dp"
-                android:layout_toEndOf="@+id/textView"
-                android:text=":25 dk"
-                android:textSize="14dp" />
+                android:layout_marginStart="140dp"
+                android:layout_marginTop="270dp"
+                android:layout_marginBottom="8dp"
+                android:text=":25dk"
+                android:textSize="13sp" />
 
 
         </RelativeLayout>

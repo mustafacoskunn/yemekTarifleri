@@ -49,14 +49,14 @@ public class tariflerAdapter extends RecyclerView.Adapter<tariflerAdapter.cardVi
         holder.textView.setTypeface(face1);
         YoYo.with(Techniques.FadeInDown).playOn(holder.cardView); //aşagı dogru animasyon
       holder.yemekAdText.setText(tarifler.getYemekad());
-      holder.hazirlamasuresiText.setText("Hazırlama süresi:"+tarifler.getHazirlamasuresi()+" dk");
+      holder.hazirlamasuresiText.setText("Hazırlama: "+tarifler.getHazirlamasuresi()+"dk");
       holder.hazirlamasuretext.setTypeface(face1);
       String sure=String.valueOf(tarifler.getSure());
       if(tarifler.getSure()==0){
           sure="-";
       }
        holder.hazirlamasuretext.setText(":"+sure+" dk");
-      holder.kisiSayisiText.setText(String.valueOf(tarifler.getKisisayisi()+" kisilik"));
+      holder.kisiSayisiText.setText(String.valueOf(tarifler.getKisisayisi()+" kisi"));
         //holder.resim.setImageResource(mContext.getResources().getIdentifier(tariflerList.get(position).getResim()
           //      ,"drawable", mContext.getPackageName())); //bu kod resimin ismine göre drawablenden çekmeye yarıyor sıra sıra card view ekliyor
 
